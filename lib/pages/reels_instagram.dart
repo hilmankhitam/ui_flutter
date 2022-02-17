@@ -12,56 +12,54 @@ class _ReelsInstagramState extends State<ReelsInstagram> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: SizedBox(
-        height: 54,
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.black,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white,
-          iconSize: 24,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-              ),
-              label: '',
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.black,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-              ),
-              label: '',
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.shop_2_outlined,
-              ),
-              label: '',
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.shop_2_outlined,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.favorite,
-              ),
-              label: '',
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.favorite,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-              ),
-              label: '',
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
             ),
-          ],
-        ),
+            label: '',
+          ),
+        ],
       ),
       body: Column(
         children: [
           SafeArea(
-            child: Container(),
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.black,
+              ),
+            ),
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height - 103.1429,
+          Expanded(
             child: PageView(
               scrollDirection: Axis.vertical,
               children: const [
@@ -154,227 +152,227 @@ class _PageContainerState extends State<PageContainer> {
         Center(
           child: _controller.value.isInitialized
               ? AspectRatio(
-                  aspectRatio: _controller.value.aspectRatio + 0.01,
+                  aspectRatio: _controller.value.aspectRatio + 0.013,
                   child: VideoPlayer(_controller),
                 )
               : Container(),
         ),
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.15),
-          ),
-          padding: const EdgeInsets.symmetric(
-            horizontal: 14,
-            vertical: 14,
-          ),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Reels',
-                    style: GoogleFonts.poppins(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.15),
+            ),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 14,
+              vertical: 14,
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Reels',
+                      style: GoogleFonts.poppins(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                  const Icon(
-                    Icons.photo_camera_outlined,
-                    color: Colors.white,
-                    size: 28,
-                  ),
-                ],
-              ),
-              const Expanded(
-                child: SizedBox(),
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          CircleAvatar(
-                            maxRadius: 16,
-                            backgroundImage: NetworkImage(
-                              widget.imageUserUrl,
+                    const Icon(
+                      Icons.photo_camera_outlined,
+                      color: Colors.white,
+                      size: 28,
+                    ),
+                  ],
+                ),
+                const Expanded(
+                  child: SizedBox(),
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              maxRadius: 16,
+                              backgroundImage: NetworkImage(
+                                widget.imageUserUrl,
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            widget.username,
-                            style: GoogleFonts.poppins(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                            const SizedBox(
+                              width: 8,
                             ),
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 6,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              borderRadius: BorderRadius.circular(5),
-                              border: Border.all(
+                            Text(
+                              widget.username,
+                              style: GoogleFonts.poppins(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
                             ),
-                            child: Text(
-                              'Follow',
+                            const SizedBox(
+                              width: 8,
+                            ),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 6,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.transparent,
+                                borderRadius: BorderRadius.circular(5),
+                                border: Border.all(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              child: Text(
+                                'Follow',
+                                style: GoogleFonts.poppins(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          widget.desc,
+                          style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            const Icon(
+                              Icons.music_note,
+                              size: 20,
+                              color: Colors.white,
+                            ),
+                            const SizedBox(
+                              width: 6,
+                            ),
+                            Text(
+                              'This is Music',
                               style: GoogleFonts.poppins(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white,
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        widget.desc,
-                        style: GoogleFonts.poppins(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
+                            const SizedBox(
+                              width: 6,
+                            ),
+                            Image.asset(
+                              'assets/dot.png',
+                              width: 5,
+                            ),
+                            const SizedBox(
+                              width: 6,
+                            ),
+                            Text(
+                              'Original Audio',
+                              style: GoogleFonts.poppins(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        const Icon(
+                          Icons.favorite_outline,
+                          size: 30,
                           color: Colors.white,
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.music_note,
-                            size: 20,
+                        const SizedBox(
+                          height: 4,
+                        ),
+                        Text(
+                          widget.likeCount,
+                          style: GoogleFonts.poppins(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
                             color: Colors.white,
                           ),
-                          const SizedBox(
-                            width: 6,
-                          ),
-                          Text(
-                            'This is Music',
-                            style: GoogleFonts.poppins(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white,
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 6,
-                          ),
-                          Image.asset(
-                            'assets/dot.png',
-                            width: 5,
-                          ),
-                          const SizedBox(
-                            width: 6,
-                          ),
-                          Text(
-                            'Original Audio',
-                            style: GoogleFonts.poppins(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      const Icon(
-                        Icons.favorite_outline,
-                        size: 30,
-                        color: Colors.white,
-                      ),
-                      const SizedBox(
-                        height: 4,
-                      ),
-                      Text(
-                        widget.likeCount,
-                        style: GoogleFonts.poppins(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        const Icon(
+                          Icons.comment,
+                          size: 30,
                           color: Colors.white,
                         ),
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      const Icon(
-                        Icons.comment,
-                        size: 30,
-                        color: Colors.white,
-                      ),
-                      const SizedBox(
-                        height: 4,
-                      ),
-                      Text(
-                        widget.commentCount,
-                        style: GoogleFonts.poppins(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.white,
+                        const SizedBox(
+                          height: 4,
                         ),
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      const Icon(
-                        Icons.send,
-                        size: 30,
-                        color: Colors.white,
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      const Icon(
-                        Icons.more_vert,
-                        size: 30,
-                        color: Colors.white,
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      Container(
-                        width: 30,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(
-                              widget.imageUserUrl,
-                            ),
-                            fit: BoxFit.cover,
-                          ),
-                          border: Border.all(
+                        Text(
+                          widget.commentCount,
+                          style: GoogleFonts.poppins(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
                             color: Colors.white,
-                            width: 2,
                           ),
-                          borderRadius: BorderRadius.circular(5),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        const Icon(
+                          Icons.send,
+                          size: 30,
+                          color: Colors.white,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        const Icon(
+                          Icons.more_vert,
+                          size: 30,
+                          color: Colors.white,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Container(
+                          width: 30,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                widget.imageUserUrl,
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ],
