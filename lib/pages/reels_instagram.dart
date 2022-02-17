@@ -12,6 +12,48 @@ class _ReelsInstagramState extends State<ReelsInstagram> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      bottomNavigationBar: SizedBox(
+        height: 54,
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.black,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white,
+          iconSize: 24,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.search,
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.shop_2_outlined,
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.favorite,
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+              ),
+              label: '',
+            ),
+          ],
+        ),
+      ),
       body: Column(
         children: [
           SafeArea(
@@ -19,7 +61,7 @@ class _ReelsInstagramState extends State<ReelsInstagram> {
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height - 50,
+            height: MediaQuery.of(context).size.height - 103.1429,
             child: PageView(
               scrollDirection: Axis.vertical,
               children: const [
@@ -112,7 +154,7 @@ class _PageContainerState extends State<PageContainer> {
         Center(
           child: _controller.value.isInitialized
               ? AspectRatio(
-                  aspectRatio: _controller.value.aspectRatio - 0.03,
+                  aspectRatio: _controller.value.aspectRatio + 0.01,
                   child: VideoPlayer(_controller),
                 )
               : Container(),
