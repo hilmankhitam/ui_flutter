@@ -151,8 +151,7 @@ class _PageContainerState extends State<PageContainer> {
       children: [
         Center(
           child: _controller.value.isInitialized
-              ? AspectRatio(
-                  aspectRatio: _controller.value.aspectRatio + 0.013,
+              ? Expanded(
                   child: VideoPlayer(_controller),
                 )
               : Container(),
