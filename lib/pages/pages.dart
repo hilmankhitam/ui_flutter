@@ -8,3 +8,4 @@ part 'attack_on_titan.dart';
 part 'jujutsu_kaisen.dart';
 part 'arcane.dart';
 part 'reels_instagram.dart';
+part 'bezier_curves.dart';
